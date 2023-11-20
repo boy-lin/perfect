@@ -1,0 +1,191 @@
+/*
+ * @Overview     : Index
+ * @Author       : Zi Jun
+ * @Email        : zijun2030@163.com
+ * @Date         : 2021-02-20 15:53:54
+ * @LastEditTime : 2021-02-23 16:14:37
+ * @LastEditors  : Zi Jun
+ * @FilePath     : \simple-vite\src\styles\index.less
+ * @Mark         : Do not edit
+ */
+
+@import 'reset';
+@import 'common';
+@import './views/index';
+
+:root {
+  --primary-color: #1791d4;
+  --btn-active-color: var(--primary-color);
+  --title-color: #333;
+  --text-color: #323131;
+  --border-color: #e1e1e1;
+}
+
+/*========================================
+Layout
+e.g.:.wh(20px)
+========================================*/
+.wh(@widthValue, @heightValue: @widthValue) {
+  width: @widthValue;
+  height: @heightValue;
+}
+
+/*========================================
+Ellipsis
+e.g.: .ell()
+========================================*/
+.ell() {
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+}
+
+.ell2(@num: 2) {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @num;
+  overflow: hidden;
+}
+
+/*========================================
+Gradient
+e.g.:.gradient(to right, red, yellow)
+========================================*/
+.gradient(@direction: to right, @leftColor, @rightColor) {
+  background-image: linear-gradient(@direction, @leftColor, @rightColor);
+  background-image: -webkit-linear-gradient(
+    @direction,
+    @leftColor,
+    @rightColor
+  );
+  background-image: -o-linear-gradient(@direction, @leftColor, @rightColor);
+}
+
+/*========================================
+Opacity
+e.g.:.opacity(.5)
+========================================*/
+.opacity(@value) {
+  opacity: @value;
+  @value-ie: @value * 100;
+  filter: alpha(opacity= @value-ie);
+}
+
+/*========================================
+Border
+e.g.:.bottom-line(red)
+========================================*/
+.bottom-line(@color: @gray-4) {
+  position: relative;
+  &:before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    box-sizing: border-box;
+    height: 1px;
+    border-bottom: 1px solid @color;
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+  }
+}
+.border-line(@color: @gray-4) {
+  position: relative;
+  border: none;
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    border: 1px solid @color;
+    transform-origin: 0 0;
+    transform: scale(0.5, 0.5);
+  }
+}
+
+/*========================================
+Flex
+========================================*/
+
+.flex1 {
+  flex: 1;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-y {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-x-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.flex-x-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flex-x-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-x-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-x-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-x-evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.flex-y-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-y-start {
+  display: flex;
+  align-items: flex-start;
+}
+
+.flex-y-end {
+  display: flex;
+  align-items: flex-end;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-y-y-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.of-hidden {
+  overflow: hidden;
+}

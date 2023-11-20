@@ -1,0 +1,23 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1,
+    "workspacePrefix": "/Users/haolin/developer/boy-lin/perfect-signature"
+  },
+  "1 error YAMLException": {
+    "reason": "duplicated mapping key",
+    "mark": {
+      "name": null,
+      "buffer": "{\n  \"name\": \"perfect-signature\",\n  \"version\": \"1.0.0\",\n  \"description\": \"perfect-signature\",\n  \"description\": \"\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n     \"start\": \"\",\n    \"clean\": \"rm -rf dist\",\n  },\n  \"keywords\": [],\n  \"author\": \"\",\n  \"license\": \"ISC\"\n}\n",
+      "position": 95,
+      "line": 4,
+      "column": 2,
+      "snippet": " 2 |   \"name\": \"perfect-signature\",\n 3 |   \"version\": \"1.0.0\",\n 4 |   \"description\": \"perfect-signature\",\n 5 |   \"description\": \"\",\n-------^\n 6 |   \"main\": \"index.js\",\n 7 |   \"scripts\": {"
+    },
+    "message": "duplicated mapping key (5:3)\n\n 2 |   \"name\": \"perfect-signature\",\n 3 |   \"version\": \"1.0.0\",\n 4 |   \"description\": \"perfect-signature\",\n 5 |   \"description\": \"\",\n-------^\n 6 |   \"main\": \"index.js\",\n 7 |   \"scripts\": {",
+    "err": {
+      "name": "YAMLException",
+      "message": "duplicated mapping key (5:3)\n\n 2 |   \"name\": \"perfect-signature\",\n 3 |   \"version\": \"1.0.0\",\n 4 |   \"description\": \"perfect-signature\",\n 5 |   \"description\": \"\",\n-------^\n 6 |   \"main\": \"index.js\",\n 7 |   \"scripts\": {",
+      "stack": "YAMLException: duplicated mapping key (5:3)\n\n 2 |   \"name\": \"perfect-signature\",\n 3 |   \"version\": \"1.0.0\",\n 4 |   \"description\": \"perfect-signature\",\n 5 |   \"description\": \"\",\n-------^\n 6 |   \"main\": \"index.js\",\n 7 |   \"scripts\": {\n    at generateError (/Users/haolin/.node/corepack/pnpm/6.11.0/dist/pnpm.cjs:38160:14)\n    at throwError (/Users/haolin/.node/corepack/pnpm/6.11.0/dist/pnpm.cjs:38163:13)\n    at storeMappingPair (/Users/haolin/.node/corepack/pnpm/6.11.0/dist/pnpm.cjs:38282:11)\n    at readFlowCollection (/Users/haolin/.node/corepack/pnpm/6.11.0/dist/pnpm.cjs:38577:11)\n    at composeNode (/Users/haolin/.node/corepack/pnpm/6.11.0/dist/pnpm.cjs:39011:135)\n    at readBlockMapping (/Users/haolin/.node/corepack/pnpm/6.11.0/dist/pnpm.cjs:38775:16)\n    at composeNode (/Users/haolin/.node/corepack/pnpm/6.11.0/dist/pnpm.cjs:39011:82)\n    at readDocument (/Users/haolin/.node/corepack/pnpm/6.11.0/dist/pnpm.cjs:39143:7)\n    at loadDocuments (/Users/haolin/.node/corepack/pnpm/6.11.0/dist/pnpm.cjs:39185:9)\n    at Object.load (/Users/haolin/.node/corepack/pnpm/6.11.0/dist/pnpm.cjs:39203:23)"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+function n(n,t){var u;return function(...e){u&&(clearTimeout(u),u=null),u=setTimeout((function(){n(e)}),t)}}function t(n){if(!n.length)return"";const t=n.reduce(((n,[t,u],e,r)=>{const[o,c]=r[(e+1)%r.length];return n.push(t,u,(t+o)/2,(u+c)/2),n}),["M",...n[0],"Q"]);return t.push("Z"),t.join(" ")}export{n as debounce,t as getSvgPathFromStroke};

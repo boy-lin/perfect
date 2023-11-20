@@ -1,0 +1,96 @@
+/*
+ * @Overview     : _mixins
+ * @Author       : Zi Jun
+ * @Email        : zijun2030@163.com
+ * @Date         : 2021-02-20 15:53:54
+ * @LastEditTime : 2021-02-23 16:15:50
+ * @LastEditors  : Zi Jun
+ * @FilePath     : \simple-vite\src\styles\global\_mixins.less
+ * @Mark         : Do not edit
+ */
+
+/*========================================
+Layout
+e.g.:.wh(20px)
+========================================*/
+.wh(@widthValue, @heightValue: @widthValue) {
+	width: @widthValue;
+	height: @heightValue;
+}
+
+/*========================================
+Ellipsis
+e.g.: .ell()
+========================================*/
+.ell() {
+	overflow: hidden;
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-break: break-all;
+}
+
+.ell2(@num: 2) {
+	word-break: break-all;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: @num;
+	overflow: hidden;
+}
+
+/*========================================
+Gradient
+e.g.:.gradient(to right, red, yellow)
+========================================*/
+.gradient(@direction: to right, @leftColor, @rightColor) {
+	background-image: linear-gradient(@direction, @leftColor, @rightColor);
+	background-image: -webkit-linear-gradient(@direction, @leftColor, @rightColor);
+	background-image: -o-linear-gradient(@direction, @leftColor, @rightColor);
+}
+
+/*========================================
+Opacity
+e.g.:.opacity(.5)
+========================================*/
+.opacity(@value) {
+	opacity: @value;
+	@value-ie: @value * 100;
+	filter: alpha(opacity= @value-ie);
+}
+
+/*========================================
+Border
+e.g.:.bottom-line(red)
+========================================*/
+.bottom-line(@color: @gray-4) {
+	position: relative;
+	&:before {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		content: '';
+		box-sizing: border-box;
+		height: 1px;
+		border-bottom: 1px solid @color;
+		transform-origin: 0 0;
+		transform: scaleY(0.5);
+	}
+}
+.border-line(@color: @gray-4) {
+	position: relative;
+	border: none;
+	&:before {
+		position: absolute;
+		left: 0;
+		top: 0;
+		content: '';
+		box-sizing: border-box;
+		width: 200%;
+		height: 200%;
+		border: 1px solid @color;
+		transform-origin: 0 0;
+		transform: scale(0.5, 0.5);
+	}
+}

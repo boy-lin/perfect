@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});var e=require("./perfect-signature.js");const t={install(t){t.component("PerfectSignature",e)}};e.install=t,exports.default=e,exports.install=t;
