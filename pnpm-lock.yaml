@@ -4,11 +4,11 @@ importers:
 
   .:
     specifiers:
-      '@colin/perfect-signature': workspace:^1.0.0
       '@types/node': 14.14.35
+      perfect-signature: workspace:^1.0.0
       typescript: ^4.3.2
     dependencies:
-      '@colin/perfect-signature': link:packages/perfect-signature
+      perfect-signature: link:packages/perfect-signature
     devDependencies:
       '@types/node': 14.14.35
       typescript: 4.9.5
@@ -50,6 +50,7 @@ importers:
       dayjs: ^1.10.6
       js-cookie: 2.2.1
       less: 4.1.1
+      perfect-signature: ^1.0.0
       postcss-px-to-viewport: ^1.1.1
       typescript: ^4.3.2
       vant: 3.0.10
@@ -65,6 +66,7 @@ importers:
       dayjs: 1.11.10
       js-cookie: 2.2.1
       less: 4.1.1
+      perfect-signature: link:../packages/perfect-signature
       vant: 3.0.10_vue@3.0.7
       vue: 3.0.7
       vue-router: 4.0.5_vue@3.0.7

@@ -107,12 +107,10 @@ import dayjs from 'dayjs'
 import { dataURLtoFile } from '@/utils/methods/common'
 import { uploadFile } from '@/api/common'
 import { Toast } from 'vant';
-import PerfectSignature from "@colin/perfect-signature";
 
 export default {
   name: "Home",
   components: {
-    PerfectSignature
   },
   data() {
     return {

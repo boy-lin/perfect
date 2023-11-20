@@ -2,8 +2,8 @@ import { createApp } from "vue";
 import { Lazyload, Button, Popup, Form, Field, CellGroup, Dialog } from "vant";
 import { setupRouter } from "@/router";
 
-import PerfectSignature from "@colin/perfect-signature";
-import "@colin/perfect-signature/lib/style.css";
+import PerfectSignature from "perfect-signature";
+import "perfect-signature/lib/style.css";
 
 import App from "./App.vue";
 import "@/styles/index.less";

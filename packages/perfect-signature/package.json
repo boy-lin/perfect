@@ -1,6 +1,6 @@
 {
-  "private": true,
-  "name": "@colin/perfect-signature",
+  "private": false,
+  "name": "perfect-signature",
   "version": "1.0.0",
   "description": "",
   "main": "lib",
@@ -19,9 +19,17 @@
   "dependencies": {
     "perfect-freehand": "^1.2.0"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "perfect-freehand",
+    "perfect-signature",
+    "signature"
+  ],
+  "author": "colin",
   "license": "ISC",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^9.0.0",

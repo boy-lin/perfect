@@ -15,7 +15,8 @@
     "vue": "3.0.7",
     "vue-router": "4.0.5",
     "vuex": "4.0.0",
-    "weixin-js-sdk": "^1.6.0"
+    "weixin-js-sdk": "^1.6.0",
+    "perfect-signature": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "14.14.35",
