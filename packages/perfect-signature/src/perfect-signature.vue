@@ -14,7 +14,7 @@
         >
           <span class="icon"></span>
         </div>
-        <div class="title">添加手写签名</div>
+        <div class="title">Handwritten signature</div>
         <div></div>
       </slot>
     </div>
@@ -49,7 +49,7 @@
       <div
         class="save-btn"
         @click="handleSave"
-      ><i></i>保存签名</div>
+      ><i></i>Save</div>
     </div>
   </div>
 </template>

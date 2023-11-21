@@ -4,36 +4,36 @@
     ref="capture"
   >
     <div class="contract-main">
-      <div class="title">xx公司到货确认单</div>
+      <div class="title">Arrival confirmation form from xx company</div>
       <div class="info">
         <dl>
-          <dt>合同编号</dt>
+          <dt>Contract No</dt>
           <dd>{{info.contractNo || '-'}}</dd>
         </dl>
         <dl>
-          <dt>项目名称</dt>
+          <dt>project name</dt>
           <dd>{{info.projectName || '-'}}</dd>
         </dl>
         <dl>
-          <dt>客户名称</dt>
+          <dt>client's name</dt>
           <dd>{{info.custName || '-'}}</dd>
         </dl>
         <dl>
-          <dt>发货日期</dt>
+          <dt>Ship date</dt>
           <dd>{{info.deliverDate || '-'}}</dd>
         </dl>
         <dl>
-          <dt>收获地址</dt>
+          <dt>harvest address</dt>
           <dd>{{info.address || '-'}}</dd>
         </dl>
       </div>
       <div class="table-list">
         <table>
           <tr>
-            <th>序号</th>
-            <th>物资名称</th>
-            <th>规格/型号</th>
-            <th>数量</th>
+            <th>No.</th>
+            <th>Material name</th>
+            <th>Models</th>
+            <th>quantity</th>
           </tr>
           <template v-if="list.length>0">
             <tr
@@ -47,20 +47,20 @@
             </tr>
           </template>
           <tr
-            v-else
-            class="no-data"
-          >
-            <td colspan="4">没有数据</td>
-          </tr>
+          v-else
+          class="no-data"
+        >
+          <td colspan="4">没有数据</td>
+        </tr>
         </table>
       </div>
       <div class="tip">
-        <p>确认货物收到，数量准确，验收合格。</p>
+        <p>Confirm that the goods have been received, the quantity is accurate, and the goods have passed the acceptance inspection.</p>
       </div>
     </div>
     <div class="contract-bottom">
       <div class="signa-show">
-        <div class="title"><span>收货人签名</span>（联系方式）</div>
+        <div class="title">Consignee's signature</div>
         <div class="signa-con">
           <div
             class="signa-img"
@@ -90,14 +90,15 @@
         round
         :loading="submitLoading"
         @click.stop="handleSubmitSigna"
-      >提交</van-button>
+      >Submit</van-button>
     </div>
 
-    <perfect-signature
-      v-if="signaStatus === 0"
-      @save="handleSave"
-      @close="changeSignaStatus"
-    />
+    <Teleport v-if="signaStatus === 0" to="body" >
+      <perfect-signature
+        @save="handleSave"
+        @close="changeSignaStatus"
+      />
+    </Teleport>
 
   </div>
 </template>
@@ -115,8 +116,7 @@ export default {
   data() {
     return {
       info: {},
-      list: [
-      ],
+      list: [],
       signatureImgSrc: '',
       signaStatus: 1, // 0-待签名；1-签名完成；
       submitLoading: false,
@@ -191,7 +191,7 @@ export default {
 
   & > dl {
     margin: 0;
-    flex-basis: 50%;
+    flex-basis: 100%;
     flex-grow: 1;
     flex-shrink: 0;
     display: flex;
@@ -201,7 +201,7 @@ export default {
   }
   & > dl dt {
     flex-shrink: 0;
-    max-width: 4em;
+    max-width: 8em;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -215,6 +215,7 @@ export default {
   border-spacing: 1px;
   background-color: var(--border-color);
   width: 100%;
+  max-width: 100%;
   border-collapse: separate;
 }
 

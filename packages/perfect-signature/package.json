@@ -1,6 +1,6 @@
 {
   "private": false,
-  "name": "perfect-signature",
+  "name": "vue-perfect-signature",
   "version": "1.0.0",
   "description": "",
   "main": "lib",
@@ -17,7 +17,7 @@
     "build": "gulp -f build/gulpfile.js"
   },
   "dependencies": {
-    "perfect-freehand": "^1.2.0"
+    "perfect-freehand": "~1.2.0"
   },
   "keywords": [
     "perfect-freehand",

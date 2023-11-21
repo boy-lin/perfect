@@ -5,10 +5,10 @@ importers:
   .:
     specifiers:
       '@types/node': 14.14.35
-      perfect-signature: workspace:^1.0.0
       typescript: ^4.3.2
+      vue-perfect-signature: workspace:^1.0.0
     dependencies:
-      perfect-signature: link:packages/perfect-signature
+      vue-perfect-signature: link:packages/perfect-signature
     devDependencies:
       '@types/node': 14.14.35
       typescript: 4.9.5
