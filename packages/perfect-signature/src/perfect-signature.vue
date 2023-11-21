@@ -63,6 +63,12 @@ import Line from './line'
 
 export default {
   name: "VuePerfectSignature",
+  props: {
+    drawOptions: {
+      type: Object,
+      default: () => { }
+    }
+  },
   computed: {
     options() {
       return {
@@ -70,17 +76,7 @@ export default {
         thinning: 0.5,
         smoothing: 0.5,
         streamline: 0.5,
-        easing: (t) => t,
-        start: {
-          taper: 0,
-          easing: (t) => t,
-          cap: true
-        },
-        end: {
-          taper: 100,
-          easing: (t) => t,
-          cap: true
-        }
+        ...this.drawOptions
       };
     },
     pathData() {
@@ -88,6 +84,52 @@ export default {
       return getSvgPathFromStroke(stroke);
     }
   },
+
+  created() {
+    this.line = new Line()
+    this.handleCvsRsize = debounce(() => {
+      if (!this.$refs) return;
+      const sDom = this.$refs.signatureBox;
+      const { innerWidth: iWidth, innerHeight: iHeight } = window;
+      let style = `height:${iWidth}px;width:${iHeight}px;`
+
+      if (![-90, 90].includes(window.orientation)) {
+        style += `transform:rotate(90deg) translateX(-${iWidth}px);`
+      } else {
+        style = `height:${iHeight}px;width:${iWidth}px;`
+      }
+
+      sDom.style = style
+
+      const cDom = this.$refs.canvasRef;
+      const { height: tHeigth, width: tWidth } = this.$refs.topBar.getBoundingClientRect()
+      const { height: bHeigth, width: bWidth } = this.$refs.bottomBar.getBoundingClientRect();
+
+      if ([-90, 90].includes(window.orientation)) {
+        cDom.width = iWidth;
+        cDom.height = iHeight - tHeigth - bHeigth;
+      } else {
+        cDom.height = iWidth - tWidth - bWidth;
+        cDom.width = iHeight;
+      }
+      const cmDom = this.$refs.canvasWrapperRef;
+      this.cvsRect = cmDom.getBoundingClientRect();
+    })
+  },
+
+  mounted() {
+    document.body.classList.add("of-hidden");
+    this.initCtx();
+    window.addEventListener("resize", this.handleCvsRsize);
+    window.addEventListener("orientationchange", this.handleOrientationChange);
+  },
+
+  unmounted() {
+    document.body.classList.remove("of-hidden");
+    window.removeEventListener("resize", this.handleCvsRsize);
+    window.removeEventListener("orientationchange", this.handleOrientationChange);
+  },
+
   methods: {
     handlePointStarts(e) {
       e.stopPropagation();
@@ -185,7 +227,7 @@ export default {
 
       this.line.pushLine(currentLine)
       this.drawerLine();
-    }, 
+    },
     handlePointerMove(e) {
       this.line.lastPoint = this.line.currentPoint;
       this.line.pushLatestPoint({
@@ -199,53 +241,11 @@ export default {
     stopMoves(e) {
       e.stopPropagation();
       e.preventDefault();
+    },
+    handleOrientationChange() {
+      this.initCtx()
     }
   },
-
-  created() {
-    this.line = new Line()
-    this.handleCvsRsize = debounce(() => {
-      if (!this.$refs) return;
-      const sDom = this.$refs.signatureBox;
-      const { innerWidth: iWidth, innerHeight: iHeight } = window;
-      let style = `height:${iWidth}px;width:${iHeight}px;`
-
-      if (![-90, 90].includes(window.orientation)) {
-        style += `transform:rotate(90deg) translateX(-${iWidth}px);`
-      } else {
-        style = `height:${iHeight}px;width:${iWidth}px;`
-      }
-
-      sDom.style = style
-
-      const cDom = this.$refs.canvasRef;
-      const { height: tHeigth, width: tWidth } = this.$refs.topBar.getBoundingClientRect()
-      const { height: bHeigth, width: bWidth } = this.$refs.bottomBar.getBoundingClientRect();
-
-      if ([-90, 90].includes(window.orientation)) {
-        cDom.width = iWidth;
-        cDom.height = iHeight - tHeigth - bHeigth;
-      } else {
-        cDom.height = iWidth - tWidth - bWidth;
-        cDom.width = iHeight;
-      }
-      const cmDom = this.$refs.canvasWrapperRef;
-      this.cvsRect = cmDom.getBoundingClientRect();
-    })
-
-  },
-
-  mounted() {
-    console.log(`signa mounted!`);
-    document.body.classList.add("of-hidden");
-    this.initCtx();
-    window.addEventListener("resize", this.handleCvsRsize);
-  },
-
-  unmounted() {
-    document.body.classList.remove("of-hidden");
-    window.removeEventListener("resize", this.handleCvsRsize);
-  }
 }
 </script>
 

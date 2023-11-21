@@ -68,6 +68,7 @@ export default {
 | ------------------ | -------- | ------- | ----------------------------------------------------- |
 | `@save`             | ({ base64 })=>void   |        |                |
 | `@close`             | ()=>void   |        |                |
+| `drawOptions`             | Object   |        |Depends on perfect-freehand, so refer to its [options](https://github.com/steveruizok/perfect-freehand#options)|
 
 ## Tips & Tricks
 

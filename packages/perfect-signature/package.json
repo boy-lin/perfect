@@ -20,12 +20,13 @@
     "perfect-freehand": "~1.2.0"
   },
   "keywords": [
-    "perfect-freehand",
+    "vue",
     "perfect-signature",
-    "signature"
+    "signature",
+    "sign"
   ],
-  "author": "colin",
-  "license": "ISC",
+  "author": "haolins",
+  "license": "MIT",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
