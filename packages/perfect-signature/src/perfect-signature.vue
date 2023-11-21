@@ -6,6 +6,7 @@
     <div
       class="top-bar"
       ref="topBar"
+      @touchmove="stopMoves"
     >
       <slot name="topBar">
         <div
@@ -34,6 +35,7 @@
     <div
       class="bottom-bar"
       ref="bottomBar"
+      @touchmove="stopMoves"
     >
       <div class="bar-left">
         <div
@@ -193,6 +195,10 @@ export default {
         pressure: e.pressure
       });
       this.drawerLine();
+    },
+    stopMoves(e) {
+      e.stopPropagation();
+      e.preventDefault();
     }
   },
 
@@ -254,6 +260,10 @@ export default {
   z-index: 10;
   display: flex;
   flex-direction: column;
+}
+
+.signature-box * {
+  user-select: none;
 }
 
 .signature-box .top-bar {

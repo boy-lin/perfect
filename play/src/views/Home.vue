@@ -94,7 +94,7 @@
     </div>
 
     <Teleport v-if="signaStatus === 0" to="body" >
-      <perfect-signature
+      <vue-perfect-signature
         @save="handleSave"
         @close="changeSignaStatus"
       />
