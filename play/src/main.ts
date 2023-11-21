@@ -2,6 +2,9 @@ import { createApp } from "vue";
 import { Lazyload, Button, Popup, Form, Field, CellGroup, Dialog } from "vant";
 import { setupRouter } from "@/router";
 
+// import VuePerfectSignature from "vue-perfect-signature";
+// import "vue-perfect-signature/lib/style.css";
+
 import VuePerfectSignature from "vue-perfect-signature";
 import "vue-perfect-signature/lib/style.css";
 

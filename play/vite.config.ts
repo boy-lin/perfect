@@ -53,6 +53,7 @@ export default defineConfig({
   server: {
     open: false,
     https: false,
+    host: "0.0.0.0",
     proxy: {
       "/api": {
         target: "http://jarvis-dev.zparking-tech.com",

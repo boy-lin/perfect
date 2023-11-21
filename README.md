@@ -19,7 +19,7 @@ npm install vue-perfect-signature
 * Even when the screen is locked, it is also forced to display horizontally.
 // 锁屏情况下，也强制横屏显示
 
-![Screenshot](https://raw.githubusercontent.com/boy-lin/perfect-signature/main/packages/perfect-signature/assets/IMG_7056.PNG)
+![Screenshot](https://raw.githubusercontent.com/boy-lin/perfect-signature/main/packages/perfect-signature/assets/preview.png)
 
 ## Usage
 

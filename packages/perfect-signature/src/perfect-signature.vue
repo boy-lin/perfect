@@ -88,6 +88,8 @@ export default {
   },
   methods: {
     handlePointStarts(e) {
+      e.stopPropagation();
+
       const touch = e.targetTouches[0];
       let x = touch.clientX - this.cvsRect.left;
       let y = touch.clientY - this.cvsRect.top;
@@ -121,6 +123,8 @@ export default {
       }
     },
     handlePointMoves(e) {
+      e.stopPropagation();
+      e.preventDefault();
       const touch = e.targetTouches[0];
       let x = touch.clientX - this.cvsRect.left;
       let y = touch.clientY - this.cvsRect.top;
@@ -139,7 +143,7 @@ export default {
       this.drawerLine();
     },
 
-    handlePointEnd() {
+    handlePointEnd(e) {
       this.canvasCtx.closePath();
     },
 
