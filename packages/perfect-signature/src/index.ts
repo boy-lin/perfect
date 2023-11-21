@@ -1,11 +1,11 @@
-import PerfectSignature from './perfect-signature.vue';
+import VuePerfectSignature from './perfect-signature.vue';
 
 export const install = {
   install(app) {
-    app.component('PerfectSignature', PerfectSignature);
+    app.component('VuePerfectSignature', VuePerfectSignature);
   },
 }
 
-PerfectSignature.install = install
+VuePerfectSignature.install = install
 
-export default PerfectSignature;
+export default VuePerfectSignature;

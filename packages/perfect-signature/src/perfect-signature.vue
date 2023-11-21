@@ -60,7 +60,7 @@ import { debounce, getSvgPathFromStroke } from './utils';
 import Line from './line'
 
 export default {
-  name: "PerfectSignature",
+  name: "VuePerfectSignature",
   computed: {
     options() {
       return {

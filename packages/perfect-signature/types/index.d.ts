@@ -1,9 +1,9 @@
-import PerfectSignature from './perfect-signature.vue';
+import VuePerfectSignature from './perfect-signature.vue';
 
 export declare const install: {
     install(app: any): void;
 };
 
-export default PerfectSignature;
+export default VuePerfectSignature;
 
 export { }
