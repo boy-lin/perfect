@@ -1,8 +1,8 @@
 {
   "private": false,
   "name": "vue-perfect-signature",
-  "version": "1.0.7",
-  "description": "",
+  "version": "1.0.10",
+  "description": "Practical Vue handwritten signature component.",
   "main": "lib",
   "module": "es",
   "type": "module",
@@ -10,8 +10,7 @@
   "files": [
     "es",
     "lib",
-    "types",
-    "global.d.ts"
+    "types"
   ],
   "scripts": {
     "build": "gulp -f build/gulpfile.js"

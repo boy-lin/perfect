@@ -10,7 +10,7 @@ export default defineConfig(() => {
     },
     build: {
       rollupOptions: {
-        external: ['vue'],
+        external: ['vue', 'perfect-freehand'],
         output: [
           {
             // 打包成 commonjs
