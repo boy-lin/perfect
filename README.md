@@ -64,11 +64,24 @@ export default {
 ## Documentation
 
 ### Options
+#### Attributes
+| Property           | Type     | Default | Description                                           |
+| ------------------ | -------- | ------- | ----------------------------------------------------- |
+| `drawOptions`             | Object   |        |Depends on perfect-freehand, so refer to its [options](https://github.com/steveruizok/perfect-freehand#options)|
+
+#### Events
+
 | Property           | Type     | Default | Description                                           |
 | ------------------ | -------- | ------- | ----------------------------------------------------- |
 | `@save`             | ({ base64 })=>void   |        |                |
 | `@close`             | ()=>void   |        |                |
-| `drawOptions`             | Object   |        |Depends on perfect-freehand, so refer to its [options](https://github.com/steveruizok/perfect-freehand#options)|
+
+#### Slots
+
+| Name           | Type     | Default | Description                                           |
+| ------------------ | -------- | ------- | ----------------------------------------------------- |
+| `topBar`             | ({ base64 })=>void   |        |                |
+
 
 ## Tips & Tricks
 

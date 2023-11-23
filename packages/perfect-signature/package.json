@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "vue-perfect-signature",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "",
   "main": "lib",
   "module": "es",
@@ -31,6 +31,14 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boy-lin/perfect-signature/tree/main/packages/perfect-signature"
+  },
+  "bugs": {
+    "url": "https://github.com/boy-lin/perfect-signature/issues"
+  },
+  "homepage": "https://perfect-signature-play.vercel.app/#/",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^9.0.0",

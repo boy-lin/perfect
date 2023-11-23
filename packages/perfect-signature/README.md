@@ -18,6 +18,10 @@ npm install vue-perfect-signature
 // 仅支持移动设备
 * Even when the screen is locked, it is also forced to display horizontally.
 // 锁屏情况下，也强制横屏显示
+* Even when the screen is locked, it is also forced to display horizontally.
+// 锁屏情况下，也强制横屏显示
+* Prevent the vue-perfect-signature toolbar from safari and chrome. When the title bar slides, it will pull down to refresh the page.
+// 阻止在safari,chrome里在vue-perfect-signature工具栏，标题栏滑动会下拉刷新页面
 
 ![Screenshot](https://raw.githubusercontent.com/boy-lin/perfect-signature/main/packages/perfect-signature/assets/preview.png)
 
@@ -64,11 +68,24 @@ export default {
 ## Documentation
 
 ### Options
+#### Attributes
+| Property           | Type     | Default | Description                                           |
+| ------------------ | -------- | ------- | ----------------------------------------------------- |
+| `drawOptions`             | Object   |        |Depends on perfect-freehand, so refer to its [options](https://github.com/steveruizok/perfect-freehand#options)|
+
+#### Events
+
 | Property           | Type     | Default | Description                                           |
 | ------------------ | -------- | ------- | ----------------------------------------------------- |
 | `@save`             | ({ base64 })=>void   |        |                |
 | `@close`             | ()=>void   |        |                |
-| `drawOptions`             | Object   |        |Depends on perfect-freehand, so refer to its [options](https://github.com/steveruizok/perfect-freehand#options)|
+
+#### Slots
+
+| Name           | Type     | Default | Description                                           |
+| ------------------ | -------- | ------- | ----------------------------------------------------- |
+| `topBar`             | ({ base64 })=>void   |        |                |
+
 
 ## Tips & Tricks
 
