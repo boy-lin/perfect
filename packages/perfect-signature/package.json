@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "vue-perfect-signature",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Practical Vue handwritten signature component.",
   "main": "lib",
   "module": "es",
@@ -22,6 +22,7 @@
     "vue",
     "perfect-signature",
     "signature",
+    "手写签名",
     "sign"
   ],
   "author": "haolins",

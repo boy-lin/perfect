@@ -1,4 +1,4 @@
-# vue-perfect-signature
+# vue-perfect-signature/手写签名
 
 Practical Vue handwritten signature component.
 
